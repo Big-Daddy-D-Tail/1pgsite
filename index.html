@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Big Daddy D Tail on Wheels</title>
+<meta name="viewport"  content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    :root{
+        --primary:#0a2740;
+        --accent:#ff9f1c;
+        --dark:#0f0f0f;
+        --light:#f7f7f7;
+        --radius:8px;
+        --transition:0.3s;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+        font-family:'Roboto',sans-serif;
+        line-height:1.6;
+        color:#333;
+        background:#fff;
+    }
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;}
+
+    /* ---------- NAV ---------- */
+    header{
+        position:sticky;top:0;z-index:1000;
+        background:var(--primary);
+        color:#fff;
+    }
+    .nav{
+        display:flex;justify-content:space-between;align-items:center;
+        max-width:1200px;margin:auto;padding:1rem;
+    }
+    .nav .logo{
+        font-size:1.8rem; font-weight:700;
+    }
+    .nav ul{
+        list-style:none;
+        display:flex;gap:1.5rem;
+    }
+    .nav a{color:#fff;font-weight:500;transition:color var(--transition);}
+    .nav a:hover{color:var(--accent);}
+    /* ---------- HERO ---------- */
+    .hero{
+        background:url('https://source.unsplash.com/1600x900/?car-detailing,garage') center/cover no-repeat;
+        padding:8rem 2rem;
+        text-align:center;
+        color:#fff;
+    }
+    .hero h1{
+        font-size:3rem;
+        text-shadow:2px 2px 6px rgba(0,0,0,0.6);
+    }
+    .hero p{
+        margin:1rem 0 2rem;
+        font-size:1.2rem;
+    }
+    .hero .btn{
+        display:inline-block;
+        background:var(--accent);
+        color:#fff;
+        padding:.8rem 1.6rem;
+        border-radius:var(--radius);
+        font-weight:500;
+        transition:background var(--transition);
+    }
+    .hero .btn:hover{background:#e68a00;}
+
+    /* ---------- ABOUT ---------- */
+    .section{
+        padding:4rem 2rem;
+        max-width:1200px;margin:auto;
+    }
+    .about{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        gap:2rem;
+        align-items:center;
+    }
+    .about img{
+        border-radius:var(--radius);
+        box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    .about .text h2{margin-bottom:.5rem;color:var(--primary);}
+    .about .text p{margin-top:.5rem;}
+
+    /* ---------- SERVICES ---------- */
+    .services h2{margin-bottom:2rem;text-align:center;color:var(--primary);}
+    .service-list{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+        gap:1.5rem;
+    }
+    .service-card{
+        background:#fff;
+        border:1px solid #e0e0e0;
+        border-radius:var(--radius);
+        padding:1.8rem;
+        text-align:center;
+        transition:transform var(--transition),box-shadow var(--transition);
+    }
+    .service-card:hover{
+        transform:translateY(-6px);
+        box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    }
+    .service-card i{
+        font-size:2.2rem;
+        color:var(--primary);
+        margin-bottom:.8rem;
+    }
+    .service-card h3{
+        margin:0.6rem 0;
+        font-size:1.2rem;
+        color:var(--dark);
+    }
+    .service-card p{
+        color:#555;
+        font-size:.95rem;
+        margin-bottom:.8rem;
+    }
+    .service-card .price{
+        font-weight:700;
+        color:var(--accent);
+        font-size:1.1rem;
+    }
+
+    /* ---------- GALLERY ---------- */
+    .gallery h2{margin-bottom:2rem;text-align:center;color:var(--primary);}
+    .grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+        gap:1rem;
+    }
+    .grid img{
+        border-radius:var(--radius);
+        transition:transform var(--transition);
+    }
+    .grid img:hover{transform:scale(1.05);}
+
+    /* ---------- CONTACT ---------- */
+    .contact{
+        background:var(--light);
+        padding:4rem 2rem;
+    }
+    .contact h2{margin-bottom:2rem;text-align:center;color:var(--primary);}
+    .contact .info{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+        gap:1.5rem;
+        margin-bottom:2rem;
+    }
+    .contact .info div{
+        background:#fff;
+        padding:1.5rem;
+        border-radius:var(--radius);
+        text-align:center;
+        box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+    .contact .info i{
+        font-size:1.6rem;
+        color:var(--primary);
+        margin-bottom:.5rem;
+    }
+    .contact form{
+        max-width:560px;
+        margin:auto;
+        background:#fff;
+        padding:2rem;
+        border-radius:var(--radius);
+        box-shadow:0 2px 12px rgba(0,0,0,0.1);
+    }
+    .contact .field{
+        margin-bottom:1rem;
+    }
+    .contact label{
+        display:block;
+        margin-bottom:.4rem;
+        font-weight:500;
+    }
+    .contact input,
+    .contact textarea{
+        width:100%;
+        padding:.8rem;
+        border:1px solid #ccc;
+        border-radius:var(--radius);
+        font-family:inherit;
+    }
+    .contact textarea{height:120px;resize:vertical;}
+    .contact button{
+        background:var(--primary);
+        color:#fff;
+        border:none;
+        padding:.9rem 1.8rem;
+        border-radius:var(--radius);
+        cursor:pointer;
+        font-weight:500;
+        transition:background var(--transition);
+    }
+    .contact button:hover{background:#082339;}
+
+    /* ---------- FOOTER ---------- */
+    footer{
+        background:#222;
+        color:#bbb;
+        text-align:center;
+        padding:1.5rem 1rem;
+    }
+    footer a{color:#bbb;transition:color var(--transition);}
+    footer a:hover{color:#fff;}
+    @media (max-width:600px){
+        .hero{padding:5rem 1rem;}
+        .hero h1{font-size:2.2rem;}
+    }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<header>
+    <nav class="nav">
+        <div class="logo">Big Daddy D Tail on Wheels</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Pricing</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="home">
+    <h1>Mobile Detailing at Your Doorstep</h1>
+    <p>Cars, trucks, RVs – we make every ride shine, wherever you are.</p>
+    <a href="#contact" class="btn">Book Your Detail</a>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section class="section about" id="about">
+    <img src="https://source.unsplash.com/800x500/?car,detailing" alt="Mobile detailing">
+    <div class="text">
+        <h2>Who We Are</h2>
+        <p>
+            <strong>Big Daddy D Tail on Wheels</strong> is a fully mobile auto‑detailing service that brings premium cleaning,
+            polishing, and protection right to your driveway, office, or event site. We specialize in cars,
+            small trucks, and large trucks – all with the same meticulous attention to detail.
+        </p>
+        <p>
+            No more waiting in line at a shop. Schedule an appointment, and we’ll arrive fully equipped,
+            ready to give your vehicle that fresh‑off‑the‑lot look.
+        </p>
+    </div>
+</section>
+
+<!-- ===== SERVICES / PRICING SECTION ===== -->
+<section class="section services" id="services">
+    <h2>Our Services & Estimated Pricing</h2>
+    <div class="service-list">
+
+        <div class="service-card">
+            <i class="fas fa-water"></i>
+            <h3>Exterior Wash</h3>
+            <p>Hand‑wash, rinse, dry, tire shine.</p>
+            <div class="price">From $30</div>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-soap"></i>
+            <h3>Interior Clean</h3>
+            <p>Vacuum, carpet shampoo, dashboard polish.</p>
+            <div class="price">From $50</div>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-star"></i>
+            <h3>Full Detail (Car)</h3>
+            <p>Exterior + interior, wax, protective coating.</p>
+            <div class="price">From $120</div>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-truck"></i>
+            <h3>Truck Detail</h3>
+            <p>Full service for pickups & medium trucks.</p>
+            <div class="price">From $150</div>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-truck-moving"></i>
+            <h3>Big Truck / RV Detail</h3>
+            <p>Heavy‑duty cleaning for large trucks, trailers, RVs.</p>
+            <div class="price">From $250</div>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Paint Protection</h3>
+            <p>Ceramic coating or sealant for lasting shine.</p>
+            <div class="price">From $300</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== GALLERY SECTION ===== -->
+<section class="section gallery" id="gallery">
+    <h2>Our Work – Gallery</h2>
+    <div class="grid">
+        <!-- Car Detail -->
+        <img src="https://source.unsplash.com/600x400/?car,clean" alt="Detailed car">
+        <!-- Small Truck Detail -->
+        <img src="https://source.unsplash.com/600x400/?pickup,truck,clean" alt="Detailed pickup truck">
+        <!-- Large Truck Detail -->
+        <img src="https://source.unsplash.com/600x400/?big-truck,detailing" alt="Detailed big truck">
+        <!-- Interior Detail -->
+        <img src="https://source.unsplash.com/600x400/?car,interior,clean" alt="Interior cleaning">
+        <!-- Before/After (using same placeholder for demo) -->
+        <img src="https://source.unsplash.com/600x400/?car,before" alt="Before detail">
+        <img src="https://source.unsplash.com/600x400/?car,after" alt="After detail">
+    </div>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="contact" id="contact">
+    <h2>Get in Touch</h2>
+
+    <div class="info">
+        <div>
+            <i class="fas fa-phone-alt"></i>
+            <p><strong>Phone</strong><br> (555) 123‑4567</p>
+        </div>
+        <div>
+            <i class="fas fa-envelope"></i>
+            <p><strong>Email</strong><br> info@bigdaddetail.com</p>
+        </div>
+        <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <p><strong>Service Area</strong><br> Greater Metro Region</p>
+        </div>
+    </div>
+
+    <!-- QUICK CONTACT FORM (prototype only) -->
+    <form action="#" method="POST">
+        <div class="field">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+        </div>
+        <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123‑4567">
+        </div>
+        <div class="field">
+            <label for="message">Message / Service Details</label>
+            <textarea id="message" name="message" placeholder="e.g., 2020 Toyota Camry – Full Detail" required></textarea>
+        </div>
+        <button type="submit">Send Request</button>
+    </form>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>&copy; 2024 Big Daddy D Tail on Wheels | <a href="tel:+15551234567">Call Us</a> | <a href="mailto:info@bigdaddetail.com">Email</a></p>
+</footer>
+
+</body>
+</html>
