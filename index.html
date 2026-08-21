@@ -4,144 +4,230 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Daddy D Tail on Wheels</title>
-    <style>
-        :root {
-            --primary: #f59e0b; 
-            --bg-dark: #111827;
-            --text-light: #f9fafb;
-            --card-bg: #1f2937;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
-        
-        h1, h2, h3 { text-transform: uppercase; letter-spacing: 1px; font-weight: 800; }
-        .text-primary { color: var(--primary); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        section { padding: 80px 0; }
-        .btn { display: inline-block; background: var(--primary); color: #000; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: transform 0.2s; }
-        .btn:hover { transform: scale(1.05); }
-
-        /* Header / Hero */
-        header { height: 100vh; display: flex; flex-direction: column; background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.95)), url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1920&q=80') center/cover; }
-        nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        nav .logo { font-size: 1.5rem; font-weight: 900; }
-        nav ul { list-style: none; display: flex; gap: 20px; }
-        nav a { color: var(--text-light); text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
-        .hero-content { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero-content h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 20px; line-height: 1.1; }
-        .hero-content p { font-size: 1.2rem; max-width: 600px; margin-bottom: 30px; color: #ccc; }
-
-        /* Services & Pricing */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .service-card { background: var(--card-bg); padding: 30px; border-radius: 8px; text-align: center; border-top: 4px solid var(--primary); }
-        .price { font-size: 2.5rem; color: var(--primary); font-weight: bold; margin: 15px 0; }
-        .service-card ul { list-style: none; margin-bottom: 25px; color: #d1d5db; text-align: left; }
-        .service-card ul li { margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
-
-        /* Gallery */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 40px; }
-        .gallery-item { height: 300px; border-radius: 8px; overflow: hidden; position: relative; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-label { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.8); padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
-
-        /* Contact */
-        .contact-section { background: var(--card-bg); text-align: center; }
-        .contact-info { margin-top: 30px; font-size: 1.2rem; }
-
-        @media (max-width: 768px) { nav ul { display: none; } }
-    </style>
+    <meta name="description" content="Premium mobile car, truck, and big rig detailing. We come to you.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <header id="home">
-        <div class="container">
-            <nav>
-                <div class="logo">BIG DADDY <span class="text-primary">D TAIL</span></div>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Pricing</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Big Daddy D Tail</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
-        <div class="container hero-content">
-            <h1>We Bring the Shine <br><span class="text-primary">To Your Driveway</span></h1>
-            <p>Premium mobile washing and detailing for cars, standard trucks, and big rigs. We come to you, fully equipped and ready to work.</p>
-            <a href="#contact" class="btn">Book Your Wash Today</a>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="animate-up">We Bring the Shine to You</h1>
+            <p class="animate-up delay-1">Premium mobile detailing for Cars, Trucks, and Big Rigs. Big Daddy D Tail on Wheels delivers unmatched quality, right at your doorstep.</p>
+            <div class="hero-buttons animate-up delay-2">
+                <a href="#services" class="btn btn-primary">View Packages</a>
+                <a href="#contact" class="btn btn-secondary">Get a Quote</a>
+            </div>
         </div>
     </header>
 
-    <section id="services" class="container">
-        <h2>Estimated <span class="text-primary">Pricing Options</span></h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Sedans & Coupes</h3>
-                <div class="price">Starts at $85</div>
-                <ul>
-                    <li>Exterior Hand Wash & Wax</li>
-                    <li>Wheel & Tire Cleaning</li>
-                    <li>Interior Vacuum & Wipe Down</li>
-                    <li>Window Detailing</li>
-                </ul>
-                <a href="#contact" class="btn">Book Sedan</a>
-            </div>
-            <div class="service-card">
-                <h3>Trucks & SUVs</h3>
-                <div class="price">Starts at $120</div>
-                <ul>
-                    <li>Deep Exterior Wash</li>
-                    <li>Undercarriage Rinse</li>
-                    <li>Heavy Duty Interior Vacuum</li>
-                    <li>Leather/Cloth Treatment</li>
-                </ul>
-                <a href="#contact" class="btn">Book Truck</a>
-            </div>
-            <div class="service-card">
-                <h3>Big Rigs / Semi Trucks</h3>
-                <div class="price">Starts at $250</div>
-                <ul>
-                    <li>Full Cab Exterior Wash</li>
-                    <li>Aluminum Polishing (Add-on)</li>
-                    <li>Sleeper Cab Deep Clean</li>
-                    <li>Grease & Grime Removal</li>
-                </ul>
-                <a href="#contact" class="btn">Book Big Rig</a>
+    <section id="about" class="section about-section">
+        <div class="container fade-in-section">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>What We Do</h2>
+                    <p>Big Daddy D Tail on Wheels is your premier mobile detailing service. We understand that your time is valuable, and maintaining your vehicle's appearance can be a chore. That's why we bring our state-of-the-art equipment, premium products, and unmatched expertise directly to your home, office, or job site.</p>
+                    <p>Whether you drive a daily commuter, a heavy-duty work truck, or a commercial big rig, we have the skills to restore that showroom shine.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i data-lucide="map-pin"></i>
+                            <span>We Come to You</span>
+                        </div>
+                        <div class="feature">
+                            <i data-lucide="droplet"></i>
+                            <span>Premium Products</span>
+                        </div>
+                        <div class="feature">
+                            <i data-lucide="star"></i>
+                            <span>Satisfaction Guaranteed</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="container">
-        <h2>Our <span class="text-primary">Work</span></h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="Detailed Car">
-                <div class="gallery-label">Sedan Detailing</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=800&q=80" alt="Detailed Truck">
-                <div class="gallery-label">Truck Detailing</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80" alt="Detailed Big Rig">
-                <div class="gallery-label">Big Rig Fleet Wash</div>
+    <section id="services" class="section services-section">
+        <div class="container fade-in-section">
+            <h2 class="section-title">Our Packages & Estimated Pricing</h2>
+            <p class="section-subtitle">Choose the level of clean that fits your vehicle.</p>
+            
+            <div class="pricing-grid">
+                <!-- Cars -->
+                <div class="pricing-card">
+                    <div class="card-icon"><i data-lucide="car"></i></div>
+                    <h3>Cars & Sedans</h3>
+                    <div class="price">Starting at <span>$149</span></div>
+                    <ul class="service-list">
+                        <li><i data-lucide="check"></i> Exterior Wash & Wax</li>
+                        <li><i data-lucide="check"></i> Wheel & Tire Detail</li>
+                        <li><i data-lucide="check"></i> Interior Vacuum</li>
+                        <li><i data-lucide="check"></i> Windows In & Out</li>
+                        <li><i data-lucide="check"></i> Dashboard Wipe Down</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline full-width">Book Car</a>
+                </div>
+
+                <!-- Trucks -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-icon"><i data-lucide="truck"></i></div>
+                    <h3>Trucks & SUVs</h3>
+                    <div class="price">Starting at <span>$199</span></div>
+                    <ul class="service-list">
+                        <li><i data-lucide="check"></i> Everything in Car package</li>
+                        <li><i data-lucide="check"></i> Deep Carpet Cleaning</li>
+                        <li><i data-lucide="check"></i> Leather/Upholstery Care</li>
+                        <li><i data-lucide="check"></i> Bed Wash & Degrease</li>
+                        <li><i data-lucide="check"></i> Heavy Mud Removal</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary full-width">Book Truck</a>
+                </div>
+
+                <!-- Big Rigs -->
+                <div class="pricing-card">
+                    <div class="card-icon"><i data-lucide="container"></i></div>
+                    <h3>Big Rigs & Commercial</h3>
+                    <div class="price">Starting at <span>$349</span></div>
+                    <ul class="service-list">
+                        <li><i data-lucide="check"></i> Full Cab Exterior Wash</li>
+                        <li><i data-lucide="check"></i> Aluminum Polishing</li>
+                        <li><i data-lucide="check"></i> Stack & Tank Cleaning</li>
+                        <li><i data-lucide="check"></i> Deep Cab Interior Detail</li>
+                        <li><i data-lucide="check"></i> Fleet Pricing Available</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline full-width">Book Big Rig</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="gallery" class="section gallery-section">
+        <div class="container fade-in-section">
+            <h2 class="section-title">The Results</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery_car.jpg" alt="Detailed luxury car">
+                    <div class="gallery-overlay">
+                        <span>Car Detailing</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery_truck.jpg" alt="Detailed lifted truck">
+                    <div class="gallery-overlay">
+                        <span>Truck Detailing</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery_big_rig.jpg" alt="Detailed Peterbilt semi truck">
+                    <div class="gallery-overlay">
+                        <span>Big Rig Detailing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container fade-in-section">
+            <div class="contact-card">
+                <div class="contact-info">
+                    <h2>Ready to Shine?</h2>
+                    <p>Contact Big Daddy D Tail on Wheels to schedule your appointment or get a custom quote for your vehicle.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="icon-wrapper"><i data-lucide="phone"></i></div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-wrapper"><i data-lucide="mail"></i></div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>booking@bigdaddydtail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-wrapper"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <h4>Service Area</h4>
+                                <p>Greater Metro Area & Surrounding Suburbs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="(555) 000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle">Vehicle Type</label>
+                        <select id="vehicle" required>
+                            <option value="">Select a vehicle...</option>
+                            <option value="car">Car / Sedan</option>
+                            <option value="truck">Truck / SUV</option>
+                            <option value="bigrig">Big Rig / Semi</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Request Appointment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
         <div class="container">
-            <h2>Get in <span class="text-primary">Touch</span></h2>
-            <div class="contact-info">
-                <p><strong>Call/Text to Schedule:</strong> (555) 123-4567</p>
-                <p><strong>Email:</strong> book@bigdaddydtail.com</p>
-                <p><strong>Service Area:</strong> Bay Springs, MS & Surrounding 50 Miles</p>
-                <br>
-                <a href="mailto:book@bigdaddydtail.com" class="btn">Send Us an Email</a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Big Daddy D Tail</h3>
+                    <p>Premium mobile detailing services.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Big Daddy D Tail on Wheels. All rights reserved.</p>
             </div>
         </div>
-    </section>
+    </footer>
 
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
